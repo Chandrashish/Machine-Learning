@@ -5,10 +5,16 @@
 ----------------------------------------------------------
 
 # There are two approaches that have been attempted to apply K-means clustering using jaccard index:
+
 ## K-Clusters: 
 ### There is no single mean value in any cluster. Rather a documents affinity to a particular cluster is judged by the average of document's jaccard similarity with all other documents in the cluster. (Tried on: KOS,NIPS)
 ### Here, inertia is the sum of the average similarity of all the documents with all its other cluster documents.
-## K-means: There is a mean associated with each cluster. The mean of a cluster is the document in the cluster whose jaccard similarity is highest with the arithmetic mean of all documents in the cluster. Here, the arithmetic mean refers to the average of the frequency for each word in the vocabulary for the cluster. The mean for each word is between 0 to 1. So, if the frequency for the word is more than 0.5, then we consider the word to be in the mean document else we discard it (Tried on: ENRON). Then, associating the documents to the best cluster is done by seeing the documents jaccard similarity with the mean document.
+### K-Clusters which takes BigOh(\n^2) time for each iteraion is not feasible for classification of Enron collection as the number of documents is high
+It is observed that update of every 100 documents jaccard indices with all other documents (40000 times 100 operations) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (4 times 10^4 times 30)/100 seconds (= 25hrs ) which is very large amount of time span and extremely consuming using local storage
+
+## K-means: 
+### There is a mean associated with each cluster. The mean of a cluster is the document in the cluster whose jaccard similarity is highest with the arithmetic mean of all documents in the cluster. Here, the arithmetic mean refers to the average of the frequency for each word in the vocabulary for the cluster. 
+### The mean for each word is between 0 to 1. So, if the frequency for the word is more than 0.5, then we consider the word to be in the mean document else we discard it (Tried on: ENRON). Then, associating the documents to the best cluster is done by seeing the documents jaccard similarity with the mean document.
 
 ----------------------------------------------------------
 
