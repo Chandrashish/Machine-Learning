@@ -15,6 +15,7 @@ It is observed that update of every 100 documents jaccard indices with all other
 ## K-means: 
 ### There is a mean associated with each cluster. The mean of a cluster is the document in the cluster whose jaccard similarity is highest with the arithmetic mean of all documents in the cluster. Here, the arithmetic mean refers to the average of the frequency for each word in the vocabulary for the cluster. 
 ### The mean for each word is between 0 to 1. So, if the frequency for the word is more than 0.5, then we consider the word to be in the mean document else we discard it (Tried on: ENRON). Then, associating the documents to the best cluster is done by seeing the documents jaccard similarity with the mean document.
-
+### Here, the inertia is sum of the jaccard similarity of the documents with their cluster representative documents (i.e, the most similar document to the arithmetic mean of the cluster)
+### Here, the TC of each iteration in finding the cluster means and the documents is BigOh(n).
 ----------------------------------------------------------
 
