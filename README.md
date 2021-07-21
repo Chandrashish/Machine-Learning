@@ -9,7 +9,7 @@
 ## K-Clusters: 
 ### There is no single mean value in any cluster. Rather a documents affinity to a particular cluster is judged by the average of document's jaccard similarity with all other documents in the cluster. (Tried on: KOS,NIPS)
 ### Here, inertia is the sum of the average similarity of all the documents with all its other cluster documents.
-### K-Clusters which takes BigOh(\{n}^2\) time for each iteraion is not feasible for classification of Enron collection as the number of documents is high
+### K-Clusters which takes BigOh(\n^2\) time for each iteraion is not feasible for classification of Enron collection as the number of documents is high
 It is observed that update of every 100 documents jaccard indices with all other documents (40000 times 100 operations) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (4 times 10^4 times 30)/100 seconds (= 25hrs ) which is very large amount of time span and extremely consuming using local storage
 
 ## K-means: 
