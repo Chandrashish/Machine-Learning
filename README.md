@@ -7,13 +7,13 @@
 # There are two approaches that have been attempted to apply K-means clustering using jaccard index:
 
 ## K-Clusters: 
-> There is no single mean value in any cluster. Rather a documents affinity to a particular cluster is judged by the average of document's jaccard similarity with all other documents in the cluster. (Tried on: KOS,NIPS)
+> There is no single mean value in any cluster. Rather a documents affinity to a particular cluster is judged by the average of document's jaccard similarity with all other documents in the cluster. (Tried on: KOS, NIPS)
 
 > Here, inertia is the sum of the average similarity of all the documents with all its other cluster documents.
 
-> K-Clusters which takes BigOh(\n^2\) time for each iteraion is not feasible for classification of Enron collection as the number of documents is high
+> K-Clusters which takes *quadratic time* for each iteraion is not feasible for classification of Enron collection as the number of documents is high in it.
 
-It is observed that update of every 100 documents jaccard indices with all other documents (40000 times 100 operations) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (4 times 10^4 times 30)/100 seconds (= 25hrs ) which is very large amount of time span and extremely consuming using local storage
+It is observed that update of every 100 documents jaccard indices with all other documents (40000 times 100 operations) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (4 times 10000 times 30)/100 seconds (= 25hrs approx.) which is a large amount of time span and extremely consuming using local resources.
 
 ## K-means: 
 > There is a mean associated with each cluster. The mean of a cluster is the document in the cluster whose jaccard similarity is highest with the arithmetic mean of all documents in the cluster. Here, the arithmetic mean refers to the average of the frequency for each word in the vocabulary for the cluster. 
@@ -22,6 +22,6 @@ It is observed that update of every 100 documents jaccard indices with all other
 
 > The inertia is sum of the jaccard similarity of the documents with their cluster representative documents (i.e, the most similar document to the arithmetic mean of the cluster)
 
-> Here, the TC of each iteration in finding the cluster means and the documents is BigOh(n).
+> Here, the *Time Complexity* of each iteration in finding the cluster means and the documents is *BigOh(n)*.
 ----------------------------------------------------------
 
