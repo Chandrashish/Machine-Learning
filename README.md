@@ -13,7 +13,7 @@
 
 > K-Clusters which takes *quadratic time* for each iteraion is not feasible for classification of Enron collection as the number of documents is high in it.
 
-It is observed in Enron collection (39861 documents & 28102 words in vocabulary) that update of every 100 documents jaccard indices with all other documents (40000 times 100 operations) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (4 times 10000 times 30)/100 seconds (= 25hrs approx.) which is a large amount of time span and extremely consuming using local resources.
+It is observed in Enron collection (approx. 40000 documents & 28000 words in vocabulary) that update of every 100 document's jaccard indices with all other documents (40000 times 100 jaccard index calculation) takes 30 seconds on average. This means that 40000 updates of jaccard matrix would consume approximately (40000 times 30)/100 seconds (= 3.4 hrs approx.) which is a lot of time span and extremely consuming using local resources. Along with this storing a (40000 times 40000) jaccard matrix would require approximately 4 times 40000 times 40000 bytes (=6GB approx.) of storage memory considering 4 bytes to store each entry of the jaccard matrix.
 
 ## K-Means: 
 > There is a mean associated with each cluster. The mean of a cluster is the document in the cluster whose jaccard similarity is highest with the arithmetic mean of all documents in the cluster. Here, the arithmetic mean refers to the average of the frequency for each word in the vocabulary for the cluster. 
