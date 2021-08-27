@@ -4,6 +4,6 @@ Here, I have attempted to showcase one of the very commonly used technique in su
 #### Note: Although Fashion-MNIST is a labelled data set, I have attempted to overwrite the labels while propogating the cluster centre labels and then trained a neural network for this new data-set. So, in case we had unlabelled data, we could have still used this technique.
 
 ## The entire project is structured as:
-* > Firstly, we attempt to find an optimum number of clusters using k-means clustering and [elbow curve](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/)/[silhouette-score](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
->> This exercise is done just to indicate that even though we know that there are 10 classes in the data, the above method suggests 7 as a possible optimum cluster count as well as some larger number of clusters.
->>> An important observation is at cluster count 5, where we again perform clustering on some of the clusters already found at cluster count 5.
+> Firstly, we attempt to find an optimum number of clusters using k-means clustering and [elbow curve](https://www.analyticsvidhya.com/blog/2021/01/in-depth-intuition-of-k-means-clustering-algorithm-in-machine-learning/)/[silhouette-score](https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html)
+>> * This exercise is done just to indicate that even though we know that there are 10 classes in the data, the above method suggests 7 as a possible optimum cluster count as well as some larger number of clusters.
+>> * An important observation is at cluster count 5, where we again perform clustering on some of the clusters already found at cluster count 5.
