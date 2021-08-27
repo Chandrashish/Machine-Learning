@@ -9,4 +9,5 @@ Here, I have attempted to showcase one of the very commonly used technique in su
 >> * An important observation is at cluster count 5, where we again perform clustering on some of the clusters already found at cluster count 5.
 >> * While doing this task, I also plotted some histograms on categories in test data to visualise the performance of clustering at a particular cluster count (5 & 7 here).
 
-> Next, in line we have trained a neural network on the entire training data and tested its performance on the test-set to get a test accuracy of 
+> Next, in line we have trained a neural network on the entire training data and tested its performance on the test-set to get a test accuracy of 89.6% in 30 epochs. 
+>>  * Now, here we can expect that this result will be better than the upcoming experiments since we have trained the network with entire training data as well as with the correct label for each data point. Let's see what happens next!
