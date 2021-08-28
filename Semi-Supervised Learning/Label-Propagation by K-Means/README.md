@@ -10,4 +10,12 @@ Here, I have attempted to showcase one of the very commonly used technique in su
 >> * While doing this task, I also plotted some histograms on categories in test data to visualise the performance of clustering at a particular cluster count (5 & 7 here).
 
 > Next, in line we have trained a neural network on the entire training data and tested its performance on the test-set to get a test accuracy of 89.6% in 30 epochs. 
->>  * Now, here we can expect that this result will be better than the upcoming experiments since we have trained the network with entire training data as well as with the correct label for each data point. Let's see what happens next!
+>>  * Now, here we can expect that this result will be better than the upcoming experiments since we have trained the network with entire training data as well as with the correct label for each data point. But in a real practical scenario, we will be dealing with unlabelled data. So, the advantage of seeing the below exercise has to be understood keeping this in mind. Let's see what happens next!
+
+> Now to exhibit the advantage of clustering, we first retrain the network on 100 randomly selected images and their labels to get a test accuracy of 61.3% in 30 epochs. However, we get slightly better results if we train the network on 100 cluster centres after performing k-means clustering on the training data with the test accuracy jumping to 63.4%.
+>> * Here, the 100 cluster centres can be considered as representative images of their clusters and are distinctive from each other leading to improvement in accuracy as seen above.
+
+> Moving a step ahead if we propagate the 100 cluster centre's labels to 70% of data in each cluster and then train the network on this newly crafted dataset, we observe that the test accuracy jumps to 71.52%. 
+>> * But, propagating the labels to 100% data could lower the test accuracy as some overlaps or outliers while clustering could have been assigned wrong labels.
+
+* Overall, we usually come across many situations where we have unlabelled data and due to its huge volume it gets very expensive to label them manually. Unsupervised learning techniques are very important in such cases to rescue us!!!
